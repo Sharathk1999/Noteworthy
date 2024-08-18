@@ -6,7 +6,7 @@ class AddNewTaskUseCase {
 
   AddNewTaskUseCase({required this.repository});
 
-  Future<void> call(NoteEntity note)async{
-    return repository.addNewNote(note);
+  Future<void> call(NoteEntity noteEntity)async{
+    return repository.addNewNote(noteEntity);
   }
 }
