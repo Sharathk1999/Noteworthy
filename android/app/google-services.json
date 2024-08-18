@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "249560357378",
+    "project_id": "noteworthy-8d1ce",
+    "storage_bucket": "noteworthy-8d1ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249560357378:android:3809e62c8609f1bae5a51b",
+        "android_client_info": {
+          "package_name": "com.noteworthy.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFb4WgNlFpsoZqXd17Wydhj9KjdMElOE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
