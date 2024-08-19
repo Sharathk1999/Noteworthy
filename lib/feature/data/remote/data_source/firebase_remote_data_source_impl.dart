@@ -37,6 +37,7 @@ class FirebaseRemoteDataSourceImpl extends FirebaseRemoteDataSource {
   }
 
   @override
+  // ignore: avoid_renaming_method_parameters
   Future<void> deleteNote(NoteEntity noteEntity) async {
     final noteCollectionRef =
         firestore.collection("users").doc(noteEntity.uid).collection("notes");
