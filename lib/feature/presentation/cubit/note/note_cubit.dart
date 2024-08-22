@@ -25,32 +25,45 @@ class NoteCubit extends Cubit<NoteState> {
 
   Future<void> addNote({required NoteEntity note}) async {
     try {
-
-    } on SocketException catch (_) {
-    } catch (_) {}
-  }
-  Future<void> deleteNote({required NoteEntity note}) async {
-    try {
-
-    } on SocketException catch (_) {
-    } catch (_) {}
-  }
-  Future<void> updateNote({required NoteEntity note}) async {
-    try {
-      
-    } on SocketException catch (_) {
-    } catch (_) {}
-  }
-  Future<void> getNotes({required String uid}) async {
-    try {
-      getNoteUseCase.call(uid).listen((notes) {
-        emit(NoteLoaded(notes: notes));
-      },);
+      await addNewNoteUseCase.call(note);
     } on SocketException catch (_) {
       emit(NoteFailure());
     } catch (_) {
       emit(NoteFailure());
+    }
+  }
 
+  Future<void> deleteNote({required NoteEntity note}) async {
+    try {
+      await deleteNoteUseCase.call(note);
+    } on SocketException catch (_) {
+      emit(NoteFailure());
+    } catch (_) {
+      emit(NoteFailure());
+    }
+  }
+
+  Future<void> updateNote({required NoteEntity note}) async {
+    try {
+      await updateNoteUseCase.call(note);
+    } on SocketException catch (_) {
+      emit(NoteFailure());
+    } catch (_) {
+      emit(NoteFailure());
+    }
+  }
+
+  Future<void> getNotes({required String uid}) async {
+    try {
+      getNoteUseCase.call(uid).listen(
+        (notes) {
+          emit(NoteLoaded(notes: notes));
+        },
+      );
+    } on SocketException catch (_) {
+      emit(NoteFailure());
+    } catch (_) {
+      emit(NoteFailure());
     }
   }
 }

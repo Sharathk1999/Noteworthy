@@ -44,7 +44,7 @@ class FirebaseRemoteDataSourceImpl extends FirebaseRemoteDataSource {
 
     noteCollectionRef.doc(noteEntity.noteId).get().then(
       (note) {
-        if (!note.exists) {
+        if (note.exists) {
           noteCollectionRef.doc(noteEntity.noteId).delete();
         }
         return;
